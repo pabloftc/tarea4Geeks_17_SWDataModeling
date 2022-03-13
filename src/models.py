@@ -42,7 +42,7 @@ class People(Base):
     homeworld = Column(String(100))
     mass = Column(Integer)
     skin_color = Column(String(20))
-    # user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
 
 class Planets(Base):
@@ -58,7 +58,7 @@ class Planets(Base):
     rotation_period = Column(Integer, nullable=False)
     population = Column(Integer, nullable=False)
     terrain = Column(String(20), nullable=False)
-    # user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
 
 class Vehicles(Base):
@@ -74,7 +74,7 @@ class Vehicles(Base):
     hyperdrive_rating = Column(String(50), nullable=False)
     manufacturer = Column(String(80), nullable=False)
     model = Column(String(80), nullable=False)
-    # user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)       
 
     def to_dict(self):
